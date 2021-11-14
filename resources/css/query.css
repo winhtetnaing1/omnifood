@@ -1,0 +1,127 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
+/* 1024px to 1200px*/
+@media only screen and (max-width: 1200px) {
+  .row {
+    padding: 0 2%;
+    width: 100%;
+  }
+  .main_header {
+    width: 100%;
+    padding: 0 2%;
+  }
+  .feature_title p {
+    width: 80%;
+    margin: 0 10%;
+  }
+}
+
+/* small phone 768px to 1123px */
+@media only screen and (max-width: 1023px) {
+  html {
+    font-size: 18px;
+  }
+  section {
+    padding: 60px 0;
+  }
+  .step_box:first-child {
+    margin-top: 10px;
+  }
+  .step_box:last-child {
+    margin-top: 10px;
+  }
+  .app_screen {
+    width: 50%;
+  }
+  .work_step {
+    margin-bottom: 20px;
+  }
+  .work_step:last-of-type {
+    margin-bottom: 30px;
+  }
+  .work_step p {
+    font-size: 16px;
+  }
+  .lg_price {
+    font-size: 250%;
+  }
+  .price_box {
+    width: 100%;
+    margin: 0 10px;
+  }
+  .info {
+    font-size: 16px;
+  }
+  .form {
+    width: 80%;
+  }
+}
+
+/* small phone 481px to 767px */
+@media only screen and (max-width: 767px) {
+  section {
+    padding: 40px 0;
+  }
+  .app_screen {
+    width: 40%;
+  }
+  .col {
+    width: 100%;
+    margin: 0 0 4% 0;
+  }
+  .label_box {
+    text-align: left;
+  }
+  .menu_item ul li {
+    display: none;
+  }
+  h1 {
+    font-size: 180%;
+  }
+  h2 {
+    font-size: 130%;
+  }
+  .feature_title p {
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+  }
+  .step_box:first-child {
+    text-align: center;
+  }
+  .step_box:last-child {
+    margin-top: 30px;
+  }
+
+  .work_step div {
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    font-size: 100%;
+  }
+  .btn-down img {
+    height: 40px;
+    width: auto;
+  }
+  .work_step {
+    margin-bottom: 10px;
+  }
+  .work_step:last-of-type {
+    margin-bottom: 10px;
+  }
+  .all_price {
+    display: block;
+  }
+  .price_box {
+    margin: 0 0 4% 0;
+  }
+}
+
+/* small phone 0 to 480px */
+@media only screen and (max-width: 480px) {
+}

@@ -1,8 +1,16 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 /* ---------- basic setup ---------- */
 
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 *:focus {
@@ -15,6 +23,7 @@ html {
   color: #000;
   font-size: 20px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 .clearfix {
   zoom: 1;
@@ -46,6 +55,16 @@ h2 {
 /* ---------- header section  ---------- */
 
 header {
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url("./img/hero.jpg");
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./img/hero.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./img/hero.jpg");
   height: 100vh;
@@ -59,6 +78,8 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
 
@@ -78,6 +99,8 @@ h1 {
   display: inline-block;
   font-weight: 300;
   margin-right: 10px;
+  -webkit-transition: background-color 0.5s, border 0.5s, top 0.5s;
+  -o-transition: background-color 0.5s, border 0.5s, top 0.5s;
   transition: background-color 0.5s, border 0.5s, top 0.5s;
 }
 
@@ -103,9 +126,16 @@ h1 {
   float: left;
 }
 
-.logo img {
+.logo-white {
   width: 100px;
   height: auto;
+}
+
+.logo-black {
+  display: none;
+  height: 50px;
+  width: auto;
+  margin: 5px 0;
 }
 
 .menu_item {
@@ -124,6 +154,8 @@ h1 {
   font-size: 90%;
   text-decoration: none;
   text-transform: uppercase;
+  -webkit-transition: border 0.5s;
+  -o-transition: border 0.5s;
   transition: border 0.5s;
 }
 
@@ -132,6 +164,32 @@ h1 {
   border-bottom: 1px solid #ffa500;
 }
 
+/* ---------- sticky navigation  ---------- */
+.sticky {
+  position: fixed;
+  box-shadow: 1px 1px 5px #555;
+  top: 0;
+  right: 0;
+  background-color: #d0cdcde6;
+  width: 100%;
+}
+
+.sticky .menu_item {
+  float: right;
+  margin-top: 15px;
+}
+
+.sticky .menu_item ul li a {
+  color: #555;
+}
+
+.sticky .logo-black {
+  display: block;
+}
+
+.sticky .logo-white {
+  display: none;
+}
 /* ---------- Feature section  ---------- */
 
 h2 {
@@ -148,7 +206,6 @@ h2::after {
 }
 
 .feature_title {
-  text-align: center;
   padding-bottom: 40px;
 }
 
@@ -195,11 +252,19 @@ h3 {
 .food_box figure img {
   opacity: 0.7;
   width: 100%;
+  -webkit-transform: scale(1.15);
+  -ms-transform: scale(1.15);
   transform: scale(1.15);
+  -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+  transition: opacity 0.5s, -webkit-transform 0.5s;
+  -o-transition: transform 0.5s, opacity 0.5s;
   transition: transform 0.5s, opacity 0.5s;
+  transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 .food_box figure img:hover {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
   transform: scale(1.05);
   opacity: 1;
 }
@@ -268,6 +333,8 @@ h3 {
 .city_box a {
   text-decoration: none;
   color: #ffa500;
+  -webkit-transition: border 0.5s;
+  -o-transition: border 0.5s;
   transition: border 0.5s;
 }
 
@@ -280,6 +347,16 @@ h3 {
 /* ----------Review section  ---------- */
 .review_section {
   color: #fff;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url("./img/back-customers.jpg");
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("./img/back-customers.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("./img/back-customers.jpg");
   height: auto;
@@ -329,12 +406,17 @@ cite {
   background-color: #ece0e0;
 }
 .all_price {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 .price_box {
   background-color: #fff;
   width: 25%;
+  -webkit-box-shadow: 1px 3px 1px #8b8b8b;
   box-shadow: 1px 3px 1px #8b8b8b;
   margin: 0 20px;
 }
@@ -389,7 +471,9 @@ cite {
 }
 
 /* ---------- contact  section  ---------- */
-
+.form {
+  width: 60%;
+}
 .label_box {
   text-align: right;
   padding-right: 3%;
@@ -412,6 +496,7 @@ input[type="submit"] {
   border: 1px solid transparent;
   padding: 2px 10px;
   cursor: pointer;
+  -webkit-box-shadow: 1px 3px 2px #008000;
   box-shadow: 1px 3px 2px #008000;
 }
 input[type="submit"]:hover {
@@ -466,3 +551,5 @@ footer {
   font-size: 90%;
   margin-top: 90px;
 }
+
+/* ---------- animate section  ---------- */
